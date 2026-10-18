@@ -1,0 +1,386 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   LIGHT GOLD & WHITE — Single Theme
+   White #FFFFFF / Ivory #FAF7F0 base, Gold #C6A45B accents
+   Deep Blue #0B1730 only on announcement bar and footer
+   ============================================================ */
+@layer base {
+  :root {
+    /* Raw palette */
+    --white: 0 0% 100%;               /* #FFFFFF */
+    --ivory: 42 44% 95%;              /* #FAF6EE warm ivory */
+    --light-gold: 44 50% 93%;         /* #F7F0E0 light gold tint */
+    --champagne-bg: 42 35% 90%;       /* #EDE5D3 soft champagne */
+    --champagne-light: 42 30% 93%;    /* #F2EBDC lighter champagne */
+    --cream: 42 38% 90%;              /* #F2EAD8 cream */
+    --warm-grey: 40 16% 88%;          /* warm light grey */
+
+    --gold: 40 48% 57%;               /* #C6A45B luxury gold */
+    --gold-light: 42 60% 70%;         /* lighter gold */
+    --gold-dark: 38 42% 45%;          /* darker gold */
+    --gold-deep: 36 38% 33%;          /* readable gold on light bg */
+
+    --deep-blue: 224 64% 12%;         /* #0B1730 deep blue */
+    --deep-blue-dark: 225 60% 8%;     /* near black blue */
+    --soft-black: 0 0% 10%;           /* near black for text */
+
+    /* Semantic typography */
+    --heading: 224 30% 15%;           /* dark text for headings */
+    --body: 224 20% 25%;              /* body text */
+    --secondary-text: 224 12% 42%;    /* muted text */
+    --muted-text: 224 10% 55%;        /* lighter muted */
+    --champagne: 36 38% 33%;          /* dark gold for text */
+    --gold-accent: 38 42% 45%;        /* gold accent readable on light */
+    --on-dark: 42 40% 96%;            /* light text for dark overlays */
+
+    /* Surface tokens */
+    --background: var(--champagne-bg);  /* champagne page bg */
+    --foreground: var(--body);
+    --card: 42 40% 96%;               /* ivory card */
+    --card-foreground: var(--body);
+    --popover: 42 44% 95%;            /* ivory popover */
+    --popover-foreground: var(--body);
+    --primary: var(--gold);
+    --primary-foreground: 0 0% 10%;
+    --secondary: 42 38% 90%;          /* cream */
+    --secondary-foreground: var(--body);
+    --muted: 42 36% 92%;              /* light gold grey */
+    --muted-foreground: var(--secondary-text);
+    --accent: var(--gold);
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 42 30% 82%;             /* warm border */
+    --input: 42 30% 85%;
+    --ring: var(--gold);
+
+    /* Button semantic tokens */
+    --btn-gold-bg: var(--gold);
+    --btn-gold-text: 0 0% 10%;
+    --btn-gold-hover-bg: var(--gold-dark);
+    --btn-gold-hover-text: 42 40% 96%;
+    --btn-outline-text: var(--gold-deep);
+    --btn-outline-hover-bg: var(--gold);
+    --btn-outline-hover-text: 0 0% 10%;
+    --btn-emerald-bg: 42 38% 90%;
+    --btn-emerald-text: var(--body);
+    --btn-emerald-hover-bg: 42 32% 86%;
+    --btn-emerald-hover-text: var(--body);
+
+    /* Deep blue sections (announcement + footer) */
+    --section-blue-bg: var(--deep-blue);
+    --section-blue-text: 42 40% 96%;
+    --section-blue-muted: 224 20% 65%;
+    --section-blue-border: 224 30% 25%;
+
+    /* Marquee — deep blue */
+    --marquee-bg: var(--deep-blue);
+    --marquee-text: var(--gold-light);
+    --marquee-separator: var(--gold);
+    --marquee-border: var(--gold);
+
+    /* Texture overlay — subtle warm */
+    --water-overlay: linear-gradient(
+      135deg,
+      rgba(250, 247, 240, 0.8) 0%,
+      rgba(245, 239, 227, 0.5) 50%,
+      rgba(255, 255, 255, 0.7) 100%
+    );
+    --water-ripple: radial-gradient(ellipse at 20% 15%, rgba(198, 164, 91, 0.04), transparent 52%),
+                    radial-gradient(ellipse at 82% 78%, rgba(198, 164, 91, 0.03), transparent 50%);
+
+    --chart-1: var(--gold);
+    --chart-2: var(--gold-light);
+    --chart-3: var(--deep-blue);
+    --chart-4: 40 20% 70%;
+    --chart-5: var(--secondary-text);
+
+    --radius: 0.25rem;
+    --surface-elevated: 42 40% 96%;
+
+    /* Navbar tokens */
+    --nav-bg: var(--champagne-bg);    /* champagne */
+    --nav-bg-translucent: 42 35% 90% / 0.92;  /* champagne translucent */
+    --nav-border: 40 48% 57% / 0.15;  /* gold bottom accent */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-body;
+    background-image: var(--water-ripple);
+    background-attachment: fixed;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--heading));
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@layer components {
+  .container-luxury {
+    @apply mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gold-line {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+  }
+
+  .gold-text {
+    color: hsl(var(--gold-accent));
+  }
+
+  .heading-serif {
+    @apply font-serif font-light leading-[1.15] tracking-tight;
+    color: hsl(var(--heading));
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .label-luxury {
+    @apply text-[10px] font-medium uppercase tracking-[0.25em];
+    color: hsl(var(--secondary-text));
+  }
+
+  /* Buttons */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed sm:px-8 sm:py-3.5 sm:tracking-[0.2em];
+    background-color: hsl(var(--btn-gold-bg));
+    color: hsl(var(--btn-gold-text));
+  }
+  .btn-gold:hover:not(:disabled),
+  .btn-gold:active:not(:disabled) {
+    background-color: hsl(var(--btn-gold-hover-bg));
+    color: hsl(var(--btn-gold-hover-text));
+  }
+  .btn-gold:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed sm:px-8 sm:py-3.5 sm:tracking-[0.2em];
+    background-color: transparent;
+    color: hsl(var(--btn-outline-text));
+    border: 1px solid hsl(var(--btn-outline-text) / 0.5);
+  }
+  .btn-outline-gold:hover:not(:disabled),
+  .btn-outline-gold:active:not(:disabled) {
+    background-color: hsl(var(--btn-outline-hover-bg));
+    color: hsl(var(--btn-outline-hover-text));
+    border-color: hsl(var(--btn-outline-hover-bg));
+  }
+  .btn-outline-gold:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .btn-emerald {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed sm:px-8 sm:py-3.5 sm:tracking-[0.2em];
+    background-color: hsl(var(--btn-emerald-bg));
+    color: hsl(var(--btn-emerald-text));
+  }
+  .btn-emerald:hover:not(:disabled),
+  .btn-emerald:active:not(:disabled) {
+    background-color: hsl(var(--btn-emerald-hover-bg));
+    color: hsl(var(--btn-emerald-hover-text));
+  }
+  .btn-emerald:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .marquee-strip {
+    background: hsl(var(--marquee-bg));
+    color: hsl(var(--marquee-text));
+    border-bottom: 1px solid hsl(var(--marquee-border) / 0.25);
+  }
+
+  .marquee-text {
+    color: hsl(var(--marquee-text));
+  }
+
+  .marquee-separator {
+    color: hsl(var(--marquee-separator));
+  }
+
+  /* Deep blue section — for footer */
+  .section-deep-blue {
+    background: hsl(var(--section-blue-bg));
+    color: hsl(var(--section-blue-text));
+  }
+  .section-deep-blue h1,
+  .section-deep-blue h2,
+  .section-deep-blue h3,
+  .section-deep-blue h4,
+  .section-deep-blue h5,
+  .section-deep-blue h6 {
+    color: hsl(var(--section-blue-text));
+  }
+  .section-deep-blue .label-luxury {
+    color: hsl(var(--gold-light));
+  }
+  .section-deep-blue a {
+    color: hsl(var(--section-blue-muted));
+  }
+  .section-deep-blue a:hover {
+    color: hsl(var(--gold-light));
+  }
+
+  /* Water texture backgrounds */
+  .water-texture {
+    background-image: var(--water-ripple), var(--water-overlay);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .water-texture-section {
+    position: relative;
+  }
+  .water-texture-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--water-ripple);
+    background-size: cover;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .water-texture-section > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .water-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background) / 0.1) 0%,
+      hsl(var(--background) / 0.4) 50%,
+      hsl(var(--background) / 0.85) 100%
+    );
+  }
+
+  /* Navbar — light gold translucent with gold accent line */
+  .nav-scrolled {
+    background: hsl(var(--nav-bg) / 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--gold) / 0.2);
+    box-shadow: 0 1px 12px -4px rgba(198, 164, 91, 0.15);
+  }
+  .nav-transparent {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow-luxury {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .shadow-luxury {
+    box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.12), 0 1px 4px -1px rgba(0, 0, 0, 0.08);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-square-luxury {
+    aspect-ratio: 1 / 1;
+  }
+
+  .announcement-track {
+    animation: announcement-scroll 34s linear infinite;
+  }
+
+  .direction-rtl {
+    direction: rtl;
+  }
+
+  .touch-actions {
+    @apply lg:translate-y-full lg:group-hover:translate-y-0;
+    transform: translateY(0);
+  }
+}
+
+@keyframes announcement-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  font-family: var(--font-arabic), 'Noto Kufi Arabic', sans-serif;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-arabic), 'Noto Kufi Arabic', sans-serif;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .announcement-track {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  background: hsl(var(--background));
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--gold));
+  color: hsl(var(--soft-black));
+}
+
+.theme-toast {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--card-foreground)) !important;
+  border: 1px solid hsl(var(--gold) / 0.3) !important;
+  border-radius: 2px !important;
+}

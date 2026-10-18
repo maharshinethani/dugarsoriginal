@@ -1,0 +1,60 @@
+export const siteConfig = {
+  url: 'https://dugarsjewels.com',
+  netlifyUrl: 'https://dugarsjewels.netlify.app',
+  brand: {
+    name: 'DUGARS',
+    fullName: 'DUGARS JEWELLERY',
+    tagline: {
+      en: 'The Art of Timeless Jewellery',
+      ar: 'فن المجوهرات الخالدة',
+    },
+  },
+  currency: 'USD',
+  currencySymbol: '$',
+  contact: {
+    phone: '+971 4 123 4567',
+    email: 'concierge@dugarsjewellery.com',
+    address: {
+      en: 'Dubai Design District, Dubai, UAE',
+      ar: 'دبي ديزاين ديستريكت، دبي، الإمارات العربية المتحدة',
+    },
+    hours: {
+      en: 'Sat – Thu: 10:00 – 22:00 | Fri: 16:00 – 22:00',
+      ar: 'السبت – الخميس: 10:00 – 22:00 | الجمعة: 16:00 – 22:00',
+    },
+  },
+  social: {
+    instagram: 'https://instagram.com/dugarsjewellery',
+    facebook: 'https://facebook.com/dugarsjewellery',
+    pinterest: 'https://pinterest.com/dugarsjewellery',
+    youtube: 'https://youtube.com/@dugarsjewellery',
+  },
+  nav: [
+    { key: 'home', label: { en: 'Home', ar: 'الرئيسية' }, href: '/' },
+    { key: 'about', label: { en: 'About', ar: 'من نحن' }, href: '/about' },
+    { key: 'jewellery', label: { en: 'Jewellery', ar: 'المجوهرات' }, href: '/jewellery' },
+    { key: 'collections', label: { en: 'Collections', ar: 'المجموعات' }, href: '/collections' },
+    { key: 'contact', label: { en: 'Contact', ar: 'تواصل معنا' }, href: '/contact' },
+  ] as const,
+  categories: [
+    'rings',
+    'necklaces',
+    'earrings',
+    'bracelets',
+    'pendants',
+    'bridal',
+    'bangles',
+    'custom',
+  ],
+  collections: [
+    'signature',
+    'eternal',
+    'royal',
+    'bridal',
+    'everyday',
+    'bespoke',
+    'limited',
+    'celestial',
+  ],
+  whatsappDefault: '+971501234567',
+};
