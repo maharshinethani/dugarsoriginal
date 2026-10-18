@@ -8,7 +8,7 @@ import { X } from 'lucide-react';
 import { useLocale } from '@/lib/locale-context';
 import { LanguageSwitcher } from './language-switcher';
 import { CurrencySelector } from './currency-selector';
-import { ThemeSwitcher } from './theme-switcher';
+
 import { siteConfig } from '@/lib/site-config';
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
