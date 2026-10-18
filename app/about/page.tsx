@@ -119,9 +119,9 @@ export default function AboutPage() {
         <div className="container-luxury">
           <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
             {[
-              { number: '30+', label: isAr ? 'سنوات من الخبرة' : 'Years of Heritage' },
+              { number: '100+', label: isAr ? 'سنوات من الخبرة' : 'Years of Heritage' },
               { number: '100%', label: isAr ? 'أحجار كريمة معتمدة' : 'Certified Gemstones' },
-              { number: '10k+', label: isAr ? 'عميل سعيد' : 'Cherished Clients' },
+              { number: '500+', label: isAr ? 'عميل سعيد' : 'Cherished Clients' },
               { number: '100%', label: isAr ? 'تصاميم مخصصة' : 'Handcrafted Perfection' },
             ].map((stat, idx) => (
               <motion.div
